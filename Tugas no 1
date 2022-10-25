@@ -1,0 +1,66 @@
+#include <iostream>
+#include <math.h>
+#define N 3
+using namespace std;
+
+int main (){
+    cout << "Nama : Delano Yusuf Habibie" << endl;
+    cout << "Nim : 22343040" << endl;
+    cout << "========== Tugas Praktikum ==========" << endl;
+    cout << "========== LOMBA LAYANGAN ===========" << endl;
+
+    const float phi = 3.14;
+    int panjang[N], sudut[N], no[N];
+    string nama [N];
+    float radian, tinggi[N], jumlah = 0,rata;
+
+    int i = 0;
+    do{
+        no[i] = i+1;
+        i++;
+    }while (i < N);
+//membaca identitas peserta
+    cout << "Masukkan Identitas Peserta"<< endl;
+    i = 0;
+    do{
+        cout << "Nomor peserta: " << no[i] << endl;
+        cout << "Masukkan nama peserta ke-" << i+1 << ": ";
+        cin >> nama[i];
+        i++;
+    }while (i < N);
+    cout << endl;
+//membaca data lomba
+    cout << "Masukkan Data Lomba" << endl;
+    i = 0;
+    do{
+        cout << no[i] << ".Nama:" << nama[i] << endl;
+        cout << "Masukkan Panjang Tali Layangam: ";
+        cin >> panjang[i];
+        cout << "Masukkan Sudut Elevasi: ";
+        cin >> sudut[i];
+        radian = sudut[i] / phi;
+        tinggi[i] = sin(radian) * panjang[i];
+        cout << "Tinggi yang di peroleh: " << tinggi[i] << endl;
+        jumlah = jumlah + tinggi[i];
+        i++;
+    }while(i < N);
+    rata = jumlah / N;
+    cout << endl;
+//menampilkan informasi
+    cout << "Data Hasil Lomba" << endl;
+    cout << "==================================================================================================================" << endl;
+    cout << "|| Nomor peserta |     Nama peserta\t|      Panjang Tali\t|     Sudut Elavasi\t|     Tinggi Layangan\t||" << endl;
+    cout << "==================================================================================================================" << endl;
+    i = 0;
+    do{
+        if(i < N){
+            cout << "||       " << no[i] << "       |\t     " << nama[i] << "     \t|\t     " << panjang[i] << "     \t|\t      " << sudut[i] << "     \t|     " << tinggi[i] << "     \t||" << endl;
+        }
+        i++;
+    }while(i < N);
+    cout << "==================================================================================================================" << endl;
+    cout << "||\t\t\t\t   Rata-rata                    \t\t\t|     " << rata <<"  \t\t||" << endl;
+    cout << "==================================================================================================================" << endl;
+
+    return 0;
+}
