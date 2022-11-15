@@ -6,7 +6,6 @@ using namespace std;
 int main (){
     cout << "Nama : Delano Yusuf Habibie" << endl;
     cout << "Nim : 22343040" << endl;
-    cout << "========== Tugas Praktikum ==========" << endl;
     cout << "========== LOMBA LAYANGAN ===========" << endl;
 
     const float phi = 3.14;
